@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Weekly Diet Plan</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1 style="text-align:center; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 10px;">
+        Your BMI is: {{ bmi }}
+      </h1>
+      
+      <h2 style="text-align:center; color: lime; background-color: rgba(0, 0, 0, 0.5); padding: 8px; border-radius: 10px;">
+        You are classified as: {{ category }}
+      </h2>
+      
+    <table class="diet-plan-table">
+        <tr>
+            <th>Day</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+        </tr>
+        {% for day, meals in weekly_plan.items() %}
+        <tr>
+            <td>{{ day }}</td>
+            <td>{{ meals['Breakfast'] }}</td>
+            <td>{{ meals['Lunch'] }}</td>
+            <td>{{ meals['Dinner'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

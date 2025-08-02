@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='advisor.css') }}">
+</head>
+<body>
+    <form method="POST" style="padding: 10px; display: flex; gap: 5px;">
+        <input type="text" name="message" id="message" placeholder="Ask something..." style="flex: 5; padding: 50px;" > 
+        <div style="margin-center: 7.5vh"></div>  
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="chat-container">
+        <div class="chat-box">
+            {% if reply %}
+                <div class="bot-message"><strong>AdvisorBot:</strong> {{ reply }}</div>   
+            {% endif %}
+
+
+
+
+        </div>
+        <div>
+        <a href="index.html">
+            <button style="margin-top: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+              Back to Index Page
+            </button>
+          </a>
+          
+
+
+    </div>
+</body>
+</html>
